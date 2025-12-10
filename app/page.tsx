@@ -142,7 +142,7 @@ export default function Home() {
               className="mt-auto pb-16 max-w-2xl"
             >
               <p className="text-base text-black leading-relaxed uppercase tracking-[0.08em]">
-                WE CREATE WEBSITES AND BRANDS PEOPLE REMEMBER. NOT JUST SCROLL
+                WE CREATE WEBSITES AND BRANDS PEOPLE REMEMBER. <br></br>NOT JUST SCROLL
                 PAST.
               </p>
             </motion.div>
