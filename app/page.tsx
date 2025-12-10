@@ -59,7 +59,7 @@ export default function Home() {
   const wordRanges = useMemo(() => {
     const total = introWords.length;
     const perWord = 0.55 / total; // faster painting - less scroll per word
-    const span = perWord * 1.5; // paint ~1.5 words at a time
+    const span = perWord * 2; // paint ~1.5 words at a time
     const lead = perWord * 0.2; // smaller head start
     return introWords.map((_, index) => {
       const start = Math.max(0, index * perWord - lead);
@@ -252,7 +252,7 @@ export default function Home() {
                       1,
                       Math.max(0, (paintProgress - start) / range)
                     );
-                    const eased = t * t * (3 - 2 * t); // smoothstep
+                    const eased = t * t * (4 - 2 * t); // smoothstep
                     const base = 215;
                     const channel = Math.round(base * (1 - eased));
                     const color = `rgb(${channel}, ${channel}, ${channel})`;
