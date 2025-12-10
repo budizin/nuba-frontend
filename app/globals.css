@@ -20,6 +20,17 @@
 
 html {
   scroll-behavior: smooth;
+  cursor: none !important;
+}
+
+*,
+*::before,
+*::after {
+  cursor: none !important;
+}
+
+body {
+  cursor: none !important;
 }
 
 body {

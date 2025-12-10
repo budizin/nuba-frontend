@@ -1,10 +1,11 @@
 .revealText {
   font-weight: 600;
-  font-size: clamp(30px, 4.8vw, 64px);
-  line-height: 1.25;
-  letter-spacing: -0.02em;
+  font-size: clamp(45.6px, 10.45vw, 161.5px);
+  line-height: 0.85;
+  letter-spacing: -0.03em;
   color: #b8b8b8;
   filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.04));
+  text-align: center;
 }
 
  .projectList {
