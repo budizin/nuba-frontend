@@ -1,17 +1,49 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState, useEffect } from "react";
 import {
   motion,
   useMotionValueEvent,
   useScroll,
   useSpring,
   useTransform,
+  useMotionValue,
+  useSpring as useSpringMotion,
 } from "framer-motion";
 import styles from "./page.module.css";
 
+type WorkItem = {
+  title: string;
+  subtitle: string;
+  image: string;
+};
+
+const works: WorkItem[] = [
+  {
+    title: "C2 Montreal",
+    subtitle: "Design & Development",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+  },
+  {
+    title: "Office Studio",
+    subtitle: "Design & Development",
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop",
+  },
+  {
+    title: "Locomotive",
+    subtitle: "Design & Development",
+    image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop",
+  },
+  {
+    title: "Silencio",
+    subtitle: "Design & Development",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop",
+  },
+];
+
 export default function Home() {
   const [paintProgress, setPaintProgress] = useState(0);
+  const [hoveredWork, setHoveredWork] = useState<number | null>(null);
   const introRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: introRef,
@@ -22,6 +54,22 @@ export default function Home() {
     damping: 14,
     mass: 1.1,
   });
+
+  // Smooth cursor following with spring animation
+  const cursorX = useMotionValue(0);
+  const cursorY = useMotionValue(0);
+  const springX = useSpringMotion(cursorX, { stiffness: 400, damping: 25 });
+  const springY = useSpringMotion(cursorY, { stiffness: 400, damping: 25 });
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      cursorX.set(e.clientX);
+      cursorY.set(e.clientY);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, [cursorX, cursorY]);
 
   const introWords = useMemo(
     () =>
@@ -78,6 +126,20 @@ export default function Home() {
     setPaintProgress(latest);
   });
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      const headerOffset = 100; // Offset para el header fijo
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <div className="min-h-screen bg-white font-sans text-black">
@@ -85,18 +147,21 @@ export default function Home() {
         <nav className="bg-white rounded-full px-6 py-3 flex items-center gap-6 border border-black">
           <a
             href="#about"
+            onClick={(e) => handleNavClick(e, "#about")}
             className="text-black font-medium hover:opacity-70 transition-opacity"
           >
             About
           </a>
           <a
             href="#works"
+            onClick={(e) => handleNavClick(e, "#works")}
             className="text-black font-medium hover:opacity-70 transition-opacity"
           >
             Work
           </a>
           <a
             href="#services"
+            onClick={(e) => handleNavClick(e, "#services")}
             className="text-black font-medium hover:opacity-70 transition-opacity"
           >
             Services
@@ -277,6 +342,70 @@ export default function Home() {
               </p>
             </div>
           </div>
+        </section>
+
+        <section
+          id="works"
+          className="relative bg-white"
+        >
+          <div className="relative px-6 md:px-16">
+            <div className="sticky top-[-24px] md:top-[-10px] max-w-6xl mx-auto space-y-10 py-14 md:py-20">
+              <div className="flex items-center gap-3 uppercase tracking-wide text-sm font-semibold">
+                <span className="h-[1px] w-10 bg-black" />
+                Our Works
+              </div>
+
+              <div className={styles.projectList}>
+                {works.map((work, index) => (
+                  <div
+                    key={index}
+                    onMouseEnter={() => setHoveredWork(index)}
+                    onMouseLeave={() => setHoveredWork(null)}
+                    className="relative"
+                  >
+                    <div className="flex items-center justify-between gap-12 py-6 border-b border-neutral-200 hover:border-neutral-400 transition-colors cursor-pointer group">
+                      <div className="flex items-center gap-6">
+                        <h3 className={`text-2xl md:text-4xl font-bold transition-colors tracking-tight ${
+                          hoveredWork === index ? 'text-black' : 'text-neutral-400'
+                        }`}>
+                          {work.title}
+                        </h3>
+                      </div>
+                      <span className="text-sm text-neutral-500 uppercase tracking-wider">
+                        {work.subtitle}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Hover Image that follows cursor */}
+          {hoveredWork !== null && (
+            <motion.div
+              className="fixed w-80 h-80 overflow-hidden pointer-events-none z-50 shadow-2xl will-change-transform"
+              style={{
+                left: springX,
+                top: springY,
+                x: "-50%",
+                y: "-50%",
+              }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <motion.img
+                src={works[hoveredWork].image}
+                alt={works[hoveredWork].title}
+                className="w-full h-full object-cover"
+                initial={{ scale: 1.1 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              />
+            </motion.div>
+          )}
         </section>
 
       </main>
