@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useTheme } from "../contexts/ThemeContext";
 
 const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
   e.preventDefault();
@@ -23,6 +24,7 @@ const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) =>
 export default function Navbar() {
   const pathname = usePathname();
   const isCasePage = pathname?.startsWith("/cases");
+  const { toggleTheme } = useTheme();
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (isCasePage) {
@@ -38,35 +40,44 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 right-0 z-50 flex items-center gap-4 p-6">
       {/* Logo Circle */}
-      <div className="bg-white rounded-full w-12 h-12 flex items-center justify-center border border-black flex-shrink-0">
+      <button
+        type="button"
+        onClick={(e) => {
+          e.preventDefault();
+          console.log("[navbar] toggle button clicked");
+          toggleTheme();
+        }}
+        className="bg-white dark:bg-black rounded-full w-12 h-12 flex items-center justify-center border border-black dark:border-white flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity relative z-[60]"
+        aria-label="Toggle dark mode"
+      >
         <Image
           src="/Nuba logo.svg"
           alt="Nuba Logo"
           width={25}
           height={18}
-          className="w-6 h-auto"
+          className="w-6 h-auto dark:invert"
         />
-      </div>
+      </button>
       
-      <nav className="bg-white rounded-full px-6 py-3 flex items-center gap-6 border border-black">
+      <nav className="bg-white dark:bg-black rounded-full px-6 py-3 flex items-center gap-6 border border-black dark:border-white transition-colors duration-300">
         <a
           href={isCasePage ? "/#about" : "#about"}
           onClick={(e) => handleLinkClick(e, "#about")}
-          className="text-black font-medium hover:opacity-70 transition-opacity"
+          className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity"
         >
           About
         </a>
         <a
           href={isCasePage ? "/#works" : "#works"}
           onClick={(e) => handleLinkClick(e, "#works")}
-          className="text-black font-medium hover:opacity-70 transition-opacity"
+          className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity"
         >
           Work
         </a>
         <a
           href={isCasePage ? "/#services" : "#services"}
           onClick={(e) => handleLinkClick(e, "#services")}
-          className="text-black font-medium hover:opacity-70 transition-opacity"
+          className="text-black dark:text-white font-medium hover:opacity-70 transition-opacity"
         >
           Services
         </a>
