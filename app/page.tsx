@@ -34,7 +34,7 @@ const AnimatedTextLine = ({ words, className = "" }: { words: string[]; classNam
         }}
       >
         {repeatedWords.map((word, index) => (
-          <span key={index} className="text-xs md:text-sm font-bold uppercase tracking-wider text-black dark:text-white transition-colors duration-300">
+          <span key={index} className="text-xs md:text-sm font-bold uppercase tracking-wider text-black">
             {word}
             <span className="mx-2 md:mx-3">-</span>
           </span>
@@ -266,18 +266,18 @@ export default function Home() {
   const scrollProgressWidth = useTransform(pageScrollProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black font-sans text-black dark:text-white transition-colors duration-300">
+    <div className="min-h-screen bg-white font-sans text-black">
       <Navbar />
 
       <main className="relative flex flex-col">
-        <section ref={heroRef} className="relative min-h-screen flex flex-col md:flex-row items-start bg-white dark:bg-black overflow-hidden transition-colors duration-300">
+        <section ref={heroRef} className="relative min-h-screen flex flex-col md:flex-row items-start bg-white overflow-hidden">
           <div className="flex-1 p-10 md:p-16 pt-32 flex flex-col justify-between min-h-screen relative z-10">
             <div className="mt-10 md:mt-16">
               <motion.h1
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                className="text-[28vw] md:text-[180px] font-bold text-black dark:text-white leading-none tracking-tight transition-colors duration-300"
+                className="text-[28vw] md:text-[180px] font-bold text-black leading-none tracking-tight"
               >
                 nuba
               </motion.h1>
@@ -285,7 +285,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-                className="text-[28vw] md:text-[180px] font-bold text-black dark:text-white leading-none tracking-tight transition-colors duration-300"
+                className="text-[28vw] md:text-[180px] font-bold text-black leading-none tracking-tight"
               >
                 studio
               </motion.h2>
@@ -297,7 +297,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
               className="mt-auto pb-16 max-w-3xl"
             >
-              <p className="text-lg md:text-xl text-black dark:text-white leading-relaxed uppercase tracking-[0.08em] transition-colors duration-300">
+              <p className="text-lg md:text-xl text-black leading-relaxed uppercase tracking-[0.08em]">
                 WE CREATE{" "}
                 <span className="relative inline-block">
                   SOLUTIONS
@@ -368,12 +368,12 @@ export default function Home() {
         <section
           id="about"
           ref={introRef}
-          className="relative bg-white dark:bg-black overflow-hidden transition-colors duration-300"
+          className="relative bg-white overflow-hidden"
         >
           <div className="relative px-6 md:px-16">
             <div className="max-w-7xl mx-auto space-y-10 py-14 md:py-20">
-              <div className="flex items-center gap-3 uppercase tracking-wide text-sm font-semibold text-black dark:text-white transition-colors duration-300">
-                <span className="h-[1px] w-10 bg-black dark:bg-white transition-colors duration-300" />
+              <div className="flex items-center gap-3 uppercase tracking-wide text-sm font-semibold text-black">
+                <span className="h-[1px] w-10 bg-black" />
                 About
               </div>
 
@@ -407,7 +407,7 @@ export default function Home() {
                 </motion.p>
               </div>
 
-              <p className="max-w-4xl text-base md:text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed transition-colors duration-300">
+              <p className="max-w-4xl text-base md:text-lg text-neutral-700 leading-relaxed">
                 Each project is a lab: we prototype, animate, and refine until
                 the interface breathes. Strategy, design, and code come together
                 to push products, brands, and launches to the next level.
@@ -418,12 +418,12 @@ export default function Home() {
 
         <section
           id="works"
-          className="relative bg-white dark:bg-black overflow-hidden transition-colors duration-300"
+          className="relative bg-white overflow-hidden"
         >
           <div className="relative px-6 md:px-16">
             <div className="sticky top-[-24px] md:top-[-10px] max-w-6xl mx-auto space-y-10 py-14 md:py-20">
-              <div className="flex items-center gap-3 uppercase tracking-wide text-sm font-semibold text-black dark:text-white transition-colors duration-300">
-                <span className="h-[1px] w-10 bg-black dark:bg-white transition-colors duration-300" />
+              <div className="flex items-center gap-3 uppercase tracking-wide text-sm font-semibold text-black">
+                <span className="h-[1px] w-10 bg-black" />
                 Our Works
               </div>
 
@@ -436,15 +436,15 @@ export default function Home() {
                     onMouseLeave={() => setHoveredWork(null)}
                     className="relative block"
                   >
-                    <div className="flex items-center justify-between gap-12 py-6 border-b border-neutral-200 dark:border-neutral-800 hover:border-neutral-400 dark:hover:border-neutral-600 transition-colors cursor-pointer group">
+                    <div className="flex items-center justify-between gap-12 py-6 border-b border-neutral-200 hover:border-neutral-400 transition-colors cursor-pointer group">
                       <div className="flex items-center gap-6">
                         <h3 className={`text-2xl md:text-4xl font-bold transition-colors tracking-tight ${
-                          hoveredWork === index ? 'text-black dark:text-white' : 'text-neutral-400 dark:text-neutral-600'
+                          hoveredWork === index ? 'text-black' : 'text-neutral-400'
                         }`}>
                           {work.title}
                         </h3>
                       </div>
-                      <span className="text-sm text-neutral-500 dark:text-neutral-400 uppercase tracking-wider transition-colors duration-300">
+                      <span className="text-sm text-neutral-500 uppercase tracking-wider">
                         {work.subtitle}
                       </span>
                     </div>
@@ -461,7 +461,7 @@ export default function Home() {
                   onClick={() => setShowAllWorks(true)}
                   className="mt-12 cursor-pointer relative inline-block"
                 >
-                  <span className="text-2xl md:text-3xl font-bold text-black dark:text-white uppercase tracking-wider relative transition-colors duration-300">
+                  <span className="text-2xl md:text-3xl font-bold text-black uppercase tracking-wider relative">
                     View More
                     <motion.svg
                       className="absolute -bottom-2 left-0 w-full h-3 text-[#BAF038]"
@@ -492,7 +492,7 @@ export default function Home() {
                   onClick={() => setShowAllWorks(false)}
                   className="mt-12 cursor-pointer relative inline-block"
                 >
-                  <span className="text-2xl md:text-3xl font-bold text-black dark:text-white uppercase tracking-wider relative transition-colors duration-300">
+                  <span className="text-2xl md:text-3xl font-bold text-black uppercase tracking-wider relative">
                     View Less
                     <motion.svg
                       className="absolute -bottom-2 left-0 w-full h-3 text-[#BAF038]"
@@ -546,7 +546,7 @@ export default function Home() {
         {/* Services Section */}
         <section
           id="services"
-          className="relative bg-neutral-50 dark:bg-neutral-900 py-20 md:py-32 overflow-hidden transition-colors duration-300"
+          className="relative bg-neutral-50 py-20 md:py-32 overflow-hidden"
         >
 
           <div className="relative px-6 md:px-16">
@@ -558,11 +558,11 @@ export default function Home() {
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                 className="mb-16"
               >
-                <div className="flex items-center gap-3 uppercase tracking-wide text-sm font-semibold mb-8 text-black dark:text-white transition-colors duration-300">
-                  <span className="h-[1px] w-10 bg-black dark:bg-white transition-colors duration-300" />
+                <div className="flex items-center gap-3 uppercase tracking-wide text-sm font-semibold mb-8 text-black">
+                  <span className="h-[1px] w-10 bg-black" />
                   Services
                 </div>
-                <h2 className="text-[15vw] md:text-[120px] font-bold text-black dark:text-white leading-none tracking-tight mb-8 transition-colors duration-300">
+                <h2 className="text-[15vw] md:text-[120px] font-bold text-black leading-none tracking-tight mb-8">
                   what we do
                 </h2>
               </motion.div>
@@ -579,7 +579,7 @@ export default function Home() {
                   <div className="mb-6 w-20 h-20 text-[#BAF038]">
                     <Code size={80} strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-black dark:text-white transition-colors duration-300">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-black">
                     Web{" "}
                     <span className="relative inline-block">
                       Development
@@ -602,7 +602,7 @@ export default function Home() {
                       </motion.svg>
                     </span>
                   </h3>
-                  <p className="text-base text-neutral-700 dark:text-neutral-300 leading-relaxed transition-colors duration-300">
+                  <p className="text-base text-neutral-700 leading-relaxed">
                     We build custom web applications with modern technologies, optimized for exceptional performance and user experience.
                   </p>
                 </motion.div>
@@ -618,7 +618,7 @@ export default function Home() {
                   <div className="mb-6 w-20 h-20 text-[#BAF038]">
                     <Palette size={80} strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-black dark:text-white transition-colors duration-300">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-black">
                     UX UI{" "}
                     <span className="relative inline-block">
                       Design
@@ -641,7 +641,7 @@ export default function Home() {
                       </motion.svg>
                     </span>
                   </h3>
-                  <p className="text-base text-neutral-700 dark:text-neutral-300 leading-relaxed transition-colors duration-300">
+                  <p className="text-base text-neutral-700 leading-relaxed">
                     We design intuitive and attractive interfaces that combine visual aesthetics with functionality to create memorable experiences.
                   </p>
                 </motion.div>
@@ -657,7 +657,7 @@ export default function Home() {
                   <div className="mb-6 w-20 h-20 text-[#BAF038]">
                     <Smartphone size={80} strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-black dark:text-white transition-colors duration-300">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-black">
                     Mobile{" "}
                     <span className="relative inline-block">
                       Development
@@ -680,7 +680,7 @@ export default function Home() {
                       </motion.svg>
                     </span>
                   </h3>
-                  <p className="text-base text-neutral-700 dark:text-neutral-300 leading-relaxed transition-colors duration-300">
+                  <p className="text-base text-neutral-700 leading-relaxed">
                     We develop native and cross-platform mobile applications for iOS and Android, creating seamless experiences that leverage the full potential of mobile devices.
                   </p>
                 </motion.div>
@@ -690,7 +690,7 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="relative bg-neutral-100 dark:bg-neutral-900 py-20 md:py-32 px-6 md:px-16 transition-colors duration-300">
+        <footer className="relative bg-neutral-100 py-20 md:py-32 px-6 md:px-16">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 mb-16">
               <div>
@@ -699,7 +699,7 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                  className="text-4xl md:text-6xl font-bold text-black dark:text-white leading-tight mb-6 transition-colors duration-300"
+                  className="text-4xl md:text-6xl font-bold text-black leading-tight mb-6"
                 >
                   Bored of playing safe?{" "}
                   <span className="relative inline-block">
@@ -731,7 +731,7 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                  className="text-base md:text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed mb-8 transition-colors duration-300"
+                  className="text-base md:text-lg text-neutral-700 leading-relaxed mb-8"
                 >
                   WE BELIEVE MAGIC HAPPENS WHEN IDEAS MEET PEOPLE WHO CARE. WRITE US. LET'S SEE WHAT SPARKS.
                 </motion.p>
