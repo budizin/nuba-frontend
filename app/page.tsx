@@ -2,6 +2,7 @@
 
 import { useMemo, useRef, useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   motion,
   useMotionValueEvent,
@@ -13,6 +14,8 @@ import {
 } from "framer-motion";
 import styles from "./page.module.css";
 import Navbar from "./components/Navbar";
+import FlyingBirds from "./components/FlyingBirds";
+import Footer from "./components/Footer";
 import { Code, Palette, Smartphone } from "lucide-react";
 
 const AnimatedTextLine = ({ words, className = "" }: { words: string[]; className?: string }) => {
@@ -186,11 +189,37 @@ export const works: WorkItem[] = [
 ];
 
 export default function Home() {
+  const pathname = usePathname();
+  const isCasePage = pathname?.startsWith("/cases");
   const [paintProgress, setPaintProgress] = useState(0);
   const [hoveredWork, setHoveredWork] = useState<number | null>(null);
   const [showAllWorks, setShowAllWorks] = useState(false);
   const introRef = useRef<HTMLDivElement | null>(null);
   const heroRef = useRef<HTMLDivElement | null>(null);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      const headerOffset = 100;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (isCasePage) {
+      e.preventDefault();
+      window.location.href = `/${href}`;
+    } else {
+      handleNavClick(e, href);
+    }
+  };
   const { scrollYProgress } = useScroll({
     target: introRef,
     offset: ["start 0.5", "end 0.5"],
@@ -271,6 +300,7 @@ export default function Home() {
 
       <main className="relative flex flex-col">
         <section ref={heroRef} className="relative min-h-screen flex flex-col md:flex-row items-start bg-white overflow-hidden">
+          <FlyingBirds />
           <div className="flex-1 p-10 md:p-16 pt-32 flex flex-col justify-between min-h-screen relative z-10">
             <div className="mt-10 md:mt-16">
               <motion.h1
@@ -690,69 +720,7 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="relative bg-neutral-100 py-20 md:py-32 px-6 md:px-16">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 mb-16">
-              <div>
-                <motion.h2
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                  className="text-4xl md:text-6xl font-bold text-black leading-tight mb-6"
-                >
-                  Bored of playing safe?{" "}
-                  <span className="relative inline-block">
-                    Write us!
-                    <motion.svg
-                      className="absolute -bottom-2 left-0 w-full h-3 text-[#BAF038]"
-                      viewBox="0 0 200 20"
-                      preserveAspectRatio="none"
-                      initial={{ pathLength: 0 }}
-                      whileInView={{ pathLength: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1, delay: 0.5 }}
-                    >
-                      <motion.path
-                        d="M 0 15 Q 50 5, 100 10 T 200 12"
-                        stroke="currentColor"
-                        strokeWidth="3"
-                        fill="none"
-                        strokeLinecap="round"
-                      />
-                    </motion.svg>
-                  </span>
-                </motion.h2>
-              </div>
-              
-              <div className="flex flex-col justify-end">
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                  className="text-base md:text-lg text-neutral-700 leading-relaxed mb-8"
-                >
-                  WE BELIEVE MAGIC HAPPENS WHEN IDEAS MEET PEOPLE WHO CARE. WRITE US. LET'S SEE WHAT SPARKS.
-                </motion.p>
-                
-                <motion.a
-                  href="https://calendly.com/facugirardi22/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                  className="bg-[#BAF038] text-black font-medium px-8 py-4 rounded-full hover:bg-[#a8d832] transition-colors inline-block w-fit"
-                >
-                  let's work together
-                </motion.a>
-              </div>
-            </div>
-            
-          </div>
-        </footer>
+        <Footer isCasePage={isCasePage} handleLinkClick={handleLinkClick} />
 
       </main>
     </div>

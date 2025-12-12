@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
   e.preventDefault();
@@ -23,6 +24,30 @@ const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) =>
 export default function Navbar() {
   const pathname = usePathname();
   const isCasePage = pathname?.startsWith("/cases");
+  const [isHovered, setIsHovered] = useState(false);
+  const [isFooterVisible, setIsFooterVisible] = useState(false);
+
+  useEffect(() => {
+    const footer = document.querySelector('footer');
+    if (!footer) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setIsFooterVisible(entry.isIntersecting);
+        });
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    observer.observe(footer);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (isCasePage) {
@@ -50,21 +75,56 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed top-0 right-0 z-50 flex items-center gap-4 p-6">
+    <motion.header
+      initial={false}
+      animate={{ opacity: isFooterVisible ? 0 : 1, y: isFooterVisible ? -20 : 0 }}
+      transition={{ duration: 0.3 }}
+      className="fixed top-0 right-0 z-50 flex items-center gap-4 p-6"
+      style={{ pointerEvents: isFooterVisible ? 'none' : 'auto' }}
+    >
       {/* Logo Circle */}
       <button
         type="button"
         onClick={handleLogoClick}
-        className="bg-white rounded-full w-12 h-12 flex items-center justify-center border border-black flex-shrink-0 relative z-[60] cursor-pointer hover:opacity-80 transition-opacity"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        className="bg-white rounded-full w-12 h-12 flex items-center justify-center border border-black flex-shrink-0 relative z-[60] cursor-pointer hover:opacity-80 transition-opacity overflow-hidden"
         aria-label="Go to home"
       >
-        <Image
-          src="/Nuba logo.svg"
-          alt="Nuba Logo"
-          width={25}
-          height={18}
-          className="w-6 h-auto"
-        />
+        <motion.div
+          initial={false}
+          animate={{ 
+            opacity: isHovered ? 0 : 1,
+            x: isHovered ? -30 : 0
+          }}
+          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          className="absolute"
+        >
+          <Image
+            src="/Nuba logo.svg"
+            alt="Nuba Logo"
+            width={25}
+            height={18}
+            className="w-6 h-auto"
+          />
+        </motion.div>
+        <motion.div
+          initial={false}
+          animate={{ 
+            opacity: isHovered ? 1 : 0,
+            x: isHovered ? 0 : 30
+          }}
+          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          className="absolute"
+        >
+          <Image
+            src="/sun.svg"
+            alt="Sun Logo"
+            width={24}
+            height={24}
+            className="w-6 h-auto"
+          />
+        </motion.div>
       </button>
       
       <nav className="bg-white rounded-full px-6 py-3 flex items-center gap-6 border border-black">
@@ -99,7 +159,7 @@ export default function Navbar() {
       >
         Contact
       </a>
-    </header>
+    </motion.header>
   );
 }
 
