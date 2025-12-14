@@ -156,23 +156,13 @@ export default function CasePage({ params }: Props) {
                 transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
                 className="mt-16 md:mt-24 relative"
               >
-                <motion.div
-                  animate={{
-                    y: [0, -20, 0],
-                  }}
-                  transition={{
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="relative w-full md:w-[80%] mx-auto aspect-[4/3] overflow-hidden shadow-2xl"
-                >
+                <div className="relative w-full md:w-[80%] mx-auto aspect-[4/3] overflow-hidden shadow-2xl">
                   <img
                     src={work.images && work.images.length > 0 ? work.images[0] : work.image}
                     alt={work.title}
                     className="w-full h-full object-cover"
                   />
-                </motion.div>
+                </div>
               </motion.div>
             </div>
           </div>
@@ -301,24 +291,13 @@ export default function CasePage({ params }: Props) {
                 transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
                 className="relative"
               >
-                <motion.div
-                  animate={{
-                    y: [0, -15, 0],
-                    rotate: [0, 1, 0],
-                  }}
-                  transition={{
-                    duration: 8,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="relative w-full aspect-[16/9] overflow-hidden shadow-2xl"
-                >
+                <div className="relative w-full aspect-[16/9] overflow-hidden shadow-2xl">
                   <img
                     src={work.images && work.images.length > 3 ? work.images[3] : (work.images && work.images.length > 0 ? work.images[0] : work.image)}
                     alt={work.title}
                     className="w-full h-full object-cover"
                   />
-                </motion.div>
+                </div>
               </motion.div>
             </div>
           </div>
@@ -343,9 +322,9 @@ export default function CasePage({ params }: Props) {
                 </p>
               </motion.div>
 
-              {work.images && work.images.length >= 3 ? (
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-                  {work.images.slice(0, 3).map((img, index) => (
+              {work.images && work.images.length >= 2 ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                  {work.images.slice(-2).map((img, index) => (
                     <motion.div
                       key={index}
                       initial={{ opacity: 0, scale: 0.9 }}
