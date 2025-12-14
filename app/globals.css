@@ -20,17 +20,23 @@
 
 html {
   scroll-behavior: smooth;
-  cursor: none !important;
 }
 
-*,
-*::before,
-*::after {
-  cursor: none !important;
-}
+/* Custom cursor only on desktop */
+@media (min-width: 1024px) {
+  html {
+    cursor: none !important;
+  }
 
-body {
-  cursor: none !important;
+  *,
+  *::before,
+  *::after {
+    cursor: none !important;
+  }
+
+  body {
+    cursor: none !important;
+  }
 }
 
 body {

@@ -32,7 +32,7 @@ export default function CustomCursor() {
 
   return (
     <motion.div
-      className="fixed pointer-events-none z-[9999]"
+      className="hidden lg:block fixed pointer-events-none z-[9999]"
       style={{
         left: cursorPos.x,
         top: cursorPos.y,

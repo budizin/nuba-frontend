@@ -86,7 +86,7 @@ export const works: WorkItem[] = [
       "Local brand showcase space",
       "Multi-platform support (Web, iOS, Android)"
     ],
-    technologies: ["Python", "Flask", "JavaScript", "React Native", "Next.js"],
+    technologies: ["Python", "Flask", "JavaScript", "React Native", "Next.js", "Figma", "User Research", "Wireframing", "Prototyping"],
     images: [
       "/images/cases/nuddo/frame2.webp",
       "/images/cases/nuddo/frame3.webp",
@@ -99,6 +99,68 @@ export const works: WorkItem[] = [
       web: "https://www.nuddo.com.ar",
       ios: "https://apps.apple.com/ar/app/nuddo/id6753880733",
       android: "https://play.google.com/store/apps/details?id=com.nuddo.app"
+    }
+  },
+  {
+    title: "Kennedy's Group",
+    subtitle: "Frontend Development",
+    image: "/images/cases/kennedys/ken1.webp",
+    slug: "kennedys-group",
+    task: "We were outsourced to develop the frontend for the company's institutional website. Create a professional, modern interface that includes property visualization, events display, and clear information about their services and values. This was a frontend-only project, focusing on building a responsive and visually appealing user interface with interactive property browsing and event showcases.",
+    solutions: "We crafted a clean, professional institutional website that effectively communicates the company's brand identity. As a frontend-only development team, we focused on creating an exceptional user experience with a responsive design, featuring interactive property visualization and events display. The website allows visitors to easily explore the vast array of ultra-luxury villas and bespoke concierge services offered by Kennedy's Group.",
+    description: "Kennedy's Group is an Enthusiastic Team of like-minded hospitality experts, whose main goal is to bring your dream holidays to life. Displaying a vast array of ultra-luxury villas and bespoke concierge services, we focus on matching each one of our selective guests with his/her ideal home-away-from-home, accompanied by all the amenities and services of a 7* exclusive resort. We are at our elite clientele's disposal 24/7, making sure that nothing is left to chance.",
+    process: "As an outsourced frontend development team, we focused exclusively on frontend development, creating a responsive and visually appealing website. The process involved understanding the company's brand identity, developing a clean and modern interface, and ensuring the site provides clear navigation that showcases the luxury villas and concierge services effectively.",
+    result: "The Kennedy's Group website successfully represents the company's professional image and luxury brand positioning while providing an intuitive user experience that helps visitors understand the company's ultra-luxury villa offerings and exclusive concierge services.",
+    features: [
+      "Property visualization",
+      "Events display",
+      "Responsive design",
+      "Modern UI/UX",
+      "Brand-focused design",
+      "Clear information architecture",
+      "Professional presentation",
+      "Service showcase"
+    ],
+    technologies: ["JavaScript", "Next.js", "Node.js"],
+    images: [
+      "/images/cases/kennedys/ken1.webp",
+      "/images/cases/kennedys/ken2.webp",
+      "/images/cases/kennedys/ken3.webp",
+      "/images/cases/kennedys/ken4.webp",
+      "/images/cases/kennedys/ken5.webp",
+      "/images/cases/kennedys/ken6.webp"
+    ],
+    links: {}
+  },
+  {
+    title: "CheckRTO",
+    subtitle: "Web Development",
+    image: "/images/cases/checkrto/check4.webp",
+    slug: "checkrto",
+    task: "Build a comprehensive vehicle inspection platform that manages reviews, reports, certificates, and technical workflows. Create an intuitive system for inspectors and vehicle owners to track and manage inspection processes.",
+    solutions: "We developed a robust platform that streamlines the entire vehicle inspection process. The system handles inspection reviews, generates detailed reports, issues certificates, and manages complex technical workflows, making vehicle inspections more efficient and transparent.",
+    description: "CheckRTO is a comprehensive vehicle inspection platform designed to manage the entire inspection lifecycle. The system enables inspectors to conduct thorough vehicle reviews, generate detailed reports, issue certificates, and manage complex technical workflows all in one integrated platform.",
+    process: "We built a full-stack web application with a focus on usability for both inspectors and vehicle owners. The development process involved creating intuitive dashboards, implementing document generation systems, and building workflow management tools that ensure compliance with inspection regulations.",
+    result: "CheckRTO successfully digitizes the vehicle inspection process, making it more efficient, transparent, and accessible for all stakeholders involved in the inspection ecosystem.",
+    features: [
+      "Inspection review management",
+      "Automated report generation",
+      "Digital certificate issuance",
+      "Technical workflow management",
+      "Inspector and owner dashboards",
+      "Compliance tracking"
+    ],
+    technologies: ["Python", "Flask", "JavaScript", "Next.js", "Figma", "User Research", "Wireframing", "Prototyping"],
+    images: [
+      "/images/cases/checkrto/check1.webp",
+      "/images/cases/checkrto/2check.webp",
+      "/images/cases/checkrto/check3.webp",
+      "/images/cases/checkrto/check4.webp",
+      "/images/cases/checkrto/check_5.webp",
+      "/images/cases/checkrto/check6.webp"
+    ],
+    links: {
+      web: "https://www.checkrto.com"
     }
   },
   {
@@ -121,61 +183,7 @@ export const works: WorkItem[] = [
       "Product search and filtering",
       "Wallet balance management"
     ],
-    technologies: ["Python", "Flask", "JavaScript", "Next.js"],
-    links: {}
-  },
-  {
-    title: "CheckRTO",
-    subtitle: "Web Development",
-    image: "/images/cases/checkrto/check4.webp",
-    slug: "checkrto",
-    task: "Build a comprehensive vehicle inspection platform that manages reviews, reports, certificates, and technical workflows. Create an intuitive system for inspectors and vehicle owners to track and manage inspection processes.",
-    solutions: "We developed a robust platform that streamlines the entire vehicle inspection process. The system handles inspection reviews, generates detailed reports, issues certificates, and manages complex technical workflows, making vehicle inspections more efficient and transparent.",
-    description: "CheckRTO is a comprehensive vehicle inspection platform designed to manage the entire inspection lifecycle. The system enables inspectors to conduct thorough vehicle reviews, generate detailed reports, issue certificates, and manage complex technical workflows all in one integrated platform.",
-    process: "We built a full-stack web application with a focus on usability for both inspectors and vehicle owners. The development process involved creating intuitive dashboards, implementing document generation systems, and building workflow management tools that ensure compliance with inspection regulations.",
-    result: "CheckRTO successfully digitizes the vehicle inspection process, making it more efficient, transparent, and accessible for all stakeholders involved in the inspection ecosystem.",
-    features: [
-      "Inspection review management",
-      "Automated report generation",
-      "Digital certificate issuance",
-      "Technical workflow management",
-      "Inspector and owner dashboards",
-      "Compliance tracking"
-    ],
-    technologies: ["Python", "Flask", "JavaScript", "Next.js"],
-    images: [
-      "/images/cases/checkrto/check1.webp",
-      "/images/cases/checkrto/2check.webp",
-      "/images/cases/checkrto/check3.webp",
-      "/images/cases/checkrto/check4.webp",
-      "/images/cases/checkrto/check_5.webp",
-      "/images/cases/checkrto/check6.webp"
-    ],
-    links: {
-      web: "https://www.checkrto.com"
-    }
-  },
-  {
-    title: "Kennedy's Group",
-    subtitle: "Frontend Development",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-    slug: "kennedys-group",
-    task: "We were outsourced to develop the frontend for the company's institutional website. Create a professional, modern interface that includes property visualization, events display, and clear information about their services and values. This was a frontend-only project, focusing on building a responsive and visually appealing user interface with interactive property browsing and event showcases.",
-    solutions: "We crafted a clean, professional institutional website that effectively communicates the company's brand identity. As a frontend-only development team, we focused on creating an exceptional user experience with a responsive design, featuring interactive property visualization and events display. The website allows visitors to easily explore the vast array of ultra-luxury villas and bespoke concierge services offered by Kennedy's Group.",
-    description: "Kennedy's Group is an Enthusiastic Team of like-minded hospitality experts, whose main goal is to bring your dream holidays to life. Displaying a vast array of ultra-luxury villas and bespoke concierge services, we focus on matching each one of our selective guests with his/her ideal home-away-from-home, accompanied by all the amenities and services of a 7* exclusive resort. We are at our elite clientele's disposal 24/7, making sure that nothing is left to chance.",
-    process: "As an outsourced frontend development team, we focused exclusively on frontend development, creating a responsive and visually appealing website. The process involved understanding the company's brand identity, developing a clean and modern interface, and ensuring the site provides clear navigation that showcases the luxury villas and concierge services effectively.",
-    result: "The Kennedy's Group website successfully represents the company's professional image and luxury brand positioning while providing an intuitive user experience that helps visitors understand the company's ultra-luxury villa offerings and exclusive concierge services.",
-    features: [
-      "Property visualization",
-      "Events display",
-      "Responsive design",
-      "Modern UI/UX",
-      "Brand-focused design",
-      "Clear information architecture",
-      "Professional presentation",
-      "Service showcase"
-    ],
-    technologies: ["JavaScript", "Next.js", "Node.js"],
+    technologies: ["Python", "Flask", "JavaScript", "Next.js", "Figma", "User Research", "Wireframing", "Prototyping"],
     links: {}
   },
   {
@@ -311,14 +319,14 @@ export default function Home() {
       <Navbar />
 
       <main className="relative flex flex-col">
-        <section ref={heroRef} className="relative min-h-screen flex flex-col md:flex-row items-start bg-white overflow-hidden">
-          <div className="flex-1 p-10 md:p-16 pt-32 flex flex-col justify-between min-h-screen relative z-10">
-            <div className="mt-10 md:mt-16">
+        <section ref={heroRef} className="relative min-h-[50vh] sm:min-h-[70vh] md:min-h-screen flex flex-col md:flex-row items-start bg-white overflow-hidden">
+          <div className="flex-1 p-6 sm:p-10 md:p-16 pt-24 sm:pt-32 flex flex-col justify-start md:justify-between min-h-0 md:min-h-screen relative z-10">
+            <div className="mt-6 sm:mt-10 md:mt-16">
               <motion.h1
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                className="text-[28vw] md:text-[180px] font-bold text-black leading-none tracking-tight"
+                className="text-[24vw] sm:text-[28vw] md:text-[180px] font-bold text-black leading-none tracking-tight"
               >
                 nuba
               </motion.h1>
@@ -326,7 +334,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-                className="text-[28vw] md:text-[180px] font-bold text-black leading-none tracking-tight"
+                className="text-[24vw] sm:text-[28vw] md:text-[180px] font-bold text-black leading-none tracking-tight"
               >
                 studio
               </motion.h2>
@@ -336,9 +344,9 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-auto pb-16 max-w-3xl"
+              className="mt-4 sm:mt-6 md:mt-auto mb-20 sm:mb-24 md:mb-0 pb-0 md:pb-16 max-w-3xl"
             >
-              <p className="text-lg md:text-xl text-black leading-relaxed uppercase tracking-[0.08em]">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-black leading-relaxed uppercase tracking-[0.08em]">
                 WE CREATE{" "}
                 <span className="relative inline-block">
                   SOLUTIONS
@@ -359,8 +367,8 @@ export default function Home() {
                     />
                   </motion.svg>
                 </span>{" "}
-                PEOPLE REMEMBER. <br className="hidden md:block" />
-                <span className="md:inline">NOT JUST SCROLL PAST.</span>
+                PEOPLE REMEMBER. <br className="hidden sm:block" />
+                <span className="sm:inline">NOT JUST SCROLL PAST.</span>
               </p>
             </motion.div>
           </div>
@@ -411,17 +419,17 @@ export default function Home() {
           ref={introRef}
           className="relative bg-white overflow-hidden"
         >
-          <div className="relative px-6 md:px-16">
-            <div className="max-w-7xl mx-auto space-y-10 py-14 md:py-20">
-              <div className="flex items-center gap-3 uppercase tracking-wide text-sm font-semibold text-black">
-                <span className="h-[1px] w-10 bg-black" />
+          <div className="relative px-6 sm:px-8 md:px-16">
+            <div className="max-w-7xl mx-auto space-y-6 sm:space-y-8 md:space-y-10 py-12 sm:py-14 md:py-20">
+              <div className="flex items-center gap-2 sm:gap-3 uppercase tracking-wide text-xs sm:text-sm font-semibold text-black">
+                <span className="h-[1px] w-8 sm:w-10 bg-black" />
                 About
               </div>
 
-              <div className="relative text-center max-w-[90vw] mx-auto">
+              <div className="relative text-center max-w-[95vw] sm:max-w-[90vw] mx-auto">
                 <motion.p
                   style={{ opacity: paintedOpacity }}
-                  className={styles.revealText}
+                  className={`${styles.revealText} text-sm sm:text-base md:text-lg`}
                 >
                   {introWords.map((word, index) => {
                     const { start, end } = wordRanges[index];
@@ -448,7 +456,7 @@ export default function Home() {
                 </motion.p>
               </div>
 
-              <p className="max-w-4xl text-base md:text-lg text-neutral-700 leading-relaxed">
+              <p className="max-w-4xl text-sm sm:text-base md:text-lg text-neutral-700 leading-relaxed px-2 sm:px-0">
                 Each project is a lab: we prototype, animate, and refine until
                 the interface breathes. Strategy, design, and code come together
                 to push products, brands, and launches to the next level.
@@ -461,10 +469,10 @@ export default function Home() {
           id="works"
           className="relative bg-white overflow-hidden"
         >
-          <div className="relative px-6 md:px-16">
-            <div className="sticky top-[-24px] md:top-[-10px] max-w-6xl mx-auto space-y-10 py-14 md:py-20">
-              <div className="flex items-center gap-3 uppercase tracking-wide text-sm font-semibold text-black">
-                <span className="h-[1px] w-10 bg-black" />
+          <div className="relative px-6 sm:px-8 md:px-16">
+            <div className="sticky top-[-24px] md:top-[-10px] max-w-6xl mx-auto space-y-6 sm:space-y-8 md:space-y-10 py-12 sm:py-14 md:py-20">
+              <div className="flex items-center gap-2 sm:gap-3 uppercase tracking-wide text-xs sm:text-sm font-semibold text-black">
+                <span className="h-[1px] w-8 sm:w-10 bg-black" />
                 Our Works
               </div>
 
@@ -475,17 +483,18 @@ export default function Home() {
                     href={`/cases/${work.slug}`}
                     onMouseEnter={() => setHoveredWork(index)}
                     onMouseLeave={() => setHoveredWork(null)}
+                    onTouchStart={() => setHoveredWork(null)}
                     className="relative block"
                   >
-                    <div className="flex items-center justify-between gap-12 py-6 border-b border-neutral-200 hover:border-neutral-400 transition-colors cursor-pointer group">
-                      <div className="flex items-center gap-6">
-                        <h3 className={`text-2xl md:text-4xl font-bold transition-colors tracking-tight ${
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-6 md:gap-12 py-4 sm:py-6 border-b border-neutral-200 hover:border-neutral-400 transition-colors cursor-pointer group">
+                      <div className="flex items-center gap-4 sm:gap-6">
+                        <h3 className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold transition-colors tracking-tight ${
                           hoveredWork === index ? 'text-black' : 'text-neutral-400'
                         }`}>
                           {work.title}
                         </h3>
                       </div>
-                      <span className="text-sm text-neutral-500 uppercase tracking-wider">
+                      <span className="text-xs sm:text-sm text-neutral-500 uppercase tracking-wider">
                         {work.subtitle}
                       </span>
                     </div>
@@ -557,10 +566,10 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Hover Image that follows cursor */}
+          {/* Hover Image that follows cursor - Hidden on mobile */}
           {hoveredWork !== null && (
             <motion.div
-              className="fixed w-80 h-80 overflow-hidden pointer-events-none z-50 shadow-2xl will-change-transform"
+              className="hidden md:block fixed w-80 h-80 overflow-hidden pointer-events-none z-50 shadow-2xl will-change-transform"
               style={{
                 left: cursorPos.x,
                 top: cursorPos.y,
@@ -590,25 +599,25 @@ export default function Home() {
           className="relative bg-neutral-50 py-20 md:py-32 overflow-hidden"
         >
 
-          <div className="relative px-6 md:px-16">
+          <div className="relative px-6 sm:px-8 md:px-16">
             <div className="max-w-7xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                className="mb-16"
+                className="mb-10 sm:mb-12 md:mb-16"
               >
-                <div className="flex items-center gap-3 uppercase tracking-wide text-sm font-semibold mb-8 text-black">
-                  <span className="h-[1px] w-10 bg-black" />
+                <div className="flex items-center gap-2 sm:gap-3 uppercase tracking-wide text-xs sm:text-sm font-semibold mb-6 sm:mb-8 text-black">
+                  <span className="h-[1px] w-8 sm:w-10 bg-black" />
                   Services
                 </div>
-                <h2 className="text-[15vw] md:text-[120px] font-bold text-black leading-none tracking-tight mb-8">
+                <h2 className="text-[16vw] sm:text-[14vw] md:text-[100px] lg:text-[120px] font-bold text-black leading-none tracking-tight mb-6 sm:mb-8">
                   what we do
                 </h2>
               </motion.div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12">
                 {/* Service 1 - Web Development */}
                 <motion.div
                   initial={{ opacity: 0, y: 40 }}
@@ -617,10 +626,10 @@ export default function Home() {
                   transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
                   className="relative"
                 >
-                  <div className="mb-6 w-20 h-20 text-[#BAF038]">
-                    <Code size={80} strokeWidth={1.5} />
+                  <div className="mb-4 sm:mb-6 w-16 h-16 sm:w-20 sm:h-20 text-[#BAF038]">
+                    <Code size={64} strokeWidth={1.5} className="w-full h-full" />
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-black">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-black">
                     Web{" "}
                     <span className="relative inline-block">
                       Development
@@ -643,7 +652,7 @@ export default function Home() {
                       </motion.svg>
                     </span>
                   </h3>
-                  <p className="text-base text-neutral-700 leading-relaxed">
+                  <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
                     We build custom web applications with modern technologies, optimized for exceptional performance and user experience.
                   </p>
                 </motion.div>
@@ -656,10 +665,10 @@ export default function Home() {
                   transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                   className="relative"
                 >
-                  <div className="mb-6 w-20 h-20 text-[#BAF038]">
-                    <Palette size={80} strokeWidth={1.5} />
+                  <div className="mb-4 sm:mb-6 w-16 h-16 sm:w-20 sm:h-20 text-[#BAF038]">
+                    <Palette size={64} strokeWidth={1.5} className="w-full h-full" />
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-black">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-black">
                     UX UI{" "}
                     <span className="relative inline-block">
                       Design
@@ -682,7 +691,7 @@ export default function Home() {
                       </motion.svg>
                     </span>
                   </h3>
-                  <p className="text-base text-neutral-700 leading-relaxed">
+                  <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
                     We design intuitive and attractive interfaces that combine visual aesthetics with functionality to create memorable experiences.
                   </p>
                 </motion.div>
@@ -695,10 +704,10 @@ export default function Home() {
                   transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
                   className="relative"
                 >
-                  <div className="mb-6 w-20 h-20 text-[#BAF038]">
-                    <Smartphone size={80} strokeWidth={1.5} />
+                  <div className="mb-4 sm:mb-6 w-16 h-16 sm:w-20 sm:h-20 text-[#BAF038]">
+                    <Smartphone size={64} strokeWidth={1.5} className="w-full h-full" />
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-black">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-black">
                     Mobile{" "}
                     <span className="relative inline-block">
                       Development
@@ -721,7 +730,7 @@ export default function Home() {
                       </motion.svg>
                     </span>
                   </h3>
-                  <p className="text-base text-neutral-700 leading-relaxed">
+                  <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
                     We develop native and cross-platform mobile applications for iOS and Android, creating seamless experiences that leverage the full potential of mobile devices.
                   </p>
                 </motion.div>
@@ -731,16 +740,16 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="relative bg-neutral-100 py-20 md:py-32 px-6 md:px-16">
+        <footer className="relative bg-neutral-100 py-12 sm:py-16 md:py-20 lg:py-32 px-6 sm:px-8 md:px-16">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 md:gap-20 mb-12 sm:mb-16">
               <div>
                 <motion.h2
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                  className="text-4xl md:text-6xl font-bold text-black leading-tight mb-6"
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-4 sm:mb-6"
                 >
                   Bored of playing safe?{" "}
                   <span className="relative inline-block">
@@ -766,13 +775,13 @@ export default function Home() {
                 </motion.h2>
               </div>
               
-              <div className="flex flex-col justify-end">
+              <div className="flex flex-col justify-start md:justify-end">
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                  className="text-base md:text-lg text-neutral-700 leading-relaxed mb-8"
+                  className="text-sm sm:text-base md:text-lg text-neutral-700 leading-relaxed mb-6 sm:mb-8"
                 >
                   WE BELIEVE MAGIC HAPPENS WHEN IDEAS MEET PEOPLE WHO CARE. WRITE US. LET'S SEE WHAT SPARKS.
                 </motion.p>
@@ -785,7 +794,7 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                  className="bg-[#BAF038] text-black font-medium px-8 py-4 rounded-full hover:bg-[#a8d832] transition-colors inline-block w-fit"
+                  className="bg-[#BAF038] text-black font-medium px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-[#a8d832] transition-colors inline-block w-fit text-sm sm:text-base"
                 >
                   let's work together
                 </motion.a>
