@@ -91,8 +91,8 @@ export const works: WorkItem[] = [
       "/images/cases/nuddo/frame2.webp",
       "/images/cases/nuddo/frame3.webp",
       "/images/cases/nuddo/frame4.webp",
+      "/images/cases/nuddo/nuddo4.webp",
       "/images/cases/nuddo/nuddo_mobile_1.png",
-      "/images/cases/nuddo/nuddo_mobile_2.png",
       "/images/cases/nuddo/nuddo_mobile_3.png"
     ],
     links: {
@@ -127,7 +127,7 @@ export const works: WorkItem[] = [
   {
     title: "CheckRTO",
     subtitle: "Web Development",
-    image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=600&fit=crop",
+    image: "/images/cases/checkrto/check4.webp",
     slug: "checkrto",
     task: "Build a comprehensive vehicle inspection platform that manages reviews, reports, certificates, and technical workflows. Create an intuitive system for inspectors and vehicle owners to track and manage inspection processes.",
     solutions: "We developed a robust platform that streamlines the entire vehicle inspection process. The system handles inspection reviews, generates detailed reports, issues certificates, and manages complex technical workflows, making vehicle inspections more efficient and transparent.",
@@ -143,6 +143,14 @@ export const works: WorkItem[] = [
       "Compliance tracking"
     ],
     technologies: ["Python", "Flask", "JavaScript", "Next.js"],
+    images: [
+      "/images/cases/checkrto/check1.webp",
+      "/images/cases/checkrto/2check.webp",
+      "/images/cases/checkrto/check3.webp",
+      "/images/cases/checkrto/check4.webp",
+      "/images/cases/checkrto/check_5.webp",
+      "/images/cases/checkrto/check6.webp"
+    ],
     links: {
       web: "https://www.checkrto.com"
     }
