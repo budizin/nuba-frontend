@@ -123,7 +123,7 @@ export default function CasePage({ params }: Props) {
                   transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                   className="text-[20vw] sm:text-[18vw] md:text-[120px] font-bold text-black leading-none tracking-tight"
                 >
-                  task
+                  Task
                 </motion.h2>
                 <motion.div
                   initial={{ opacity: 0, x: 40 }}
@@ -180,7 +180,7 @@ export default function CasePage({ params }: Props) {
                   transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                   className="text-[20vw] sm:text-[18vw] md:text-[120px] font-bold text-black leading-none tracking-tight"
                 >
-                  solutions
+                  Solutions
                 </motion.h2>
                 <motion.div
                   initial={{ opacity: 0, x: 40 }}
@@ -276,7 +276,7 @@ export default function CasePage({ params }: Props) {
                 className="mb-8 sm:mb-12"
               >
                 <h2 className="text-[20vw] sm:text-[18vw] md:text-[120px] font-bold text-black leading-none tracking-tight mb-6 sm:mb-8">
-                  process
+                  Process
                 </h2>
                 <p className="text-sm sm:text-base md:text-lg text-neutral-700 leading-relaxed max-w-3xl">
                   {work.process || "We studied the company's activities, target audience, and competitors. Then we developed a creative concept and wrote the copy. We infused the design concept with the ideas, then created and animated the visual elements."}
@@ -315,7 +315,7 @@ export default function CasePage({ params }: Props) {
                 className="mb-8 sm:mb-12 text-center"
               >
                 <h2 className="text-[20vw] sm:text-[18vw] md:text-[120px] font-bold text-white leading-none tracking-tight mb-6 sm:mb-8">
-                  result
+                  Result
                 </h2>
                 <p className="text-sm sm:text-base md:text-lg text-neutral-300 leading-relaxed max-w-2xl mx-auto px-4">
                   {work.result || "A website that breaks conventions while respecting the industry's visual language. Bold, innovative, and distinctly memorable."}
