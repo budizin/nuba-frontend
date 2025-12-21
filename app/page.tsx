@@ -212,7 +212,7 @@ export const works: WorkItem[] = [
   {
     title: "FAMates",
     subtitle: "UX/UI Design",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
+    image: "/images/cases/ffmates/ffmatesmock1.webp",
     slug: "famates",
     task: "Design an e-commerce platform with a focus on navigability, product visualization, and purchase flow. Create an intuitive shopping experience that guides users seamlessly from browsing to checkout.",
     solutions: "We designed an e-commerce platform centered on exceptional user experience. The design prioritizes easy navigation, clear product visualization, and a streamlined purchase flow, making online shopping intuitive and enjoyable for customers.",
@@ -228,6 +228,14 @@ export const works: WorkItem[] = [
       "Conversion-optimized UX"
     ],
     technologies: ["Figma", "User Research", "Wireframing", "Prototyping", "UI Design"],
+    images: [
+      "/images/cases/ffmates/ffmatesmock1.webp",
+      "/images/cases/ffmates/ffmatesmock2.webp",
+      "/images/cases/ffmates/ffmatesmock3.webp",
+      "/images/cases/ffmates/ffmatesm4.webp",
+      "/images/cases/ffmates/ffmatz5.webp",
+      "/images/cases/ffmates/ffmatesmock6.webp"
+    ],
     links: {
       behance: "https://www.behance.net/gallery/225646897/E-commerce-Design-UIUX"
     }
